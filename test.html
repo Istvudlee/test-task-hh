@@ -20,30 +20,30 @@
 <body>
 	<script>
 		// 1-й вариант
-		function serchMaxNumFirst(args) {
+		function searchMaxNumFirst(args) {
 			let maxNum = 0;
 			args.forEach(item => {
 				maxNum > item ? maxNum : maxNum = item;
 			});
 			return args.indexOf(maxNum);
 		}
-		erchMaxNumFirst([1, 5, 25, 2, 78, 15, 88])
+		searchMaxNumFirst([1, 5, 25, 2, 78, 15, 88])
 
 		// 2- вариант
-		function serchMaxNumSecond(args) {
+		function searchMaxNumSecond(args) {
 			return args.indexOf(Math.max(...args))
 		}
-		serchMaxNumSecond([1, 5, 25, 2, 98, 15, 88])
+		searchMaxNumSecond([1, 5, 25, 2, 98, 15, 88])
 
 		// 3- вариант
-		function serchMaxNumThird(args) {
+		function searchMaxNumThird(args) {
 			let maxNum = 0;
 			for (item of args) {
 				maxNum > item ? maxNum : maxNum = item;
 			}
 			return args.indexOf(maxNum);
 		}
-		serchMaxNumThird([1, 5, 25, 2, 208, 15, 88])
+		searchMaxNumThird([1, 5, 25, 2, 208, 15, 88])
 	</script>
 
 	<script src="test.js"></script>
