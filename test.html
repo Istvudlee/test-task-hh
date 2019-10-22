@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+	<script>
+		// включаем режим тестирования в стиле BDD
+		mocha.setup('bdd');
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+	<script>
+		// chai предоставляет большое количество функций. Объявим assert глобально
+		let assert = chai.assert;
+	</script>
+</head>
+
+<body>
+	<script>
+		// 1-й вариант
+		function serchMaxNumFirst(args) {
+			let maxNum = 0;
+			args.forEach(item => {
+				maxNum > item ? maxNum : maxNum = item;
+			});
+			return args.indexOf(maxNum);
+		}
+		erchMaxNumFirst([1, 5, 25, 2, 78, 15, 88])
+
+		// 2- вариант
+		function serchMaxNumSecond(args) {
+			return args.indexOf(Math.max(...args))
+		}
+		serchMaxNumSecond([1, 5, 25, 2, 98, 15, 88])
+
+		// 3- вариант
+		function serchMaxNumThird(args) {
+			let maxNum = 0;
+			for (item of args) {
+				maxNum > item ? maxNum : maxNum = item;
+			}
+			return args.indexOf(maxNum);
+		}
+		serchMaxNumThird([1, 5, 25, 2, 208, 15, 88])
+	</script>
+	<script src="test.js"></script>
+	<div id="mocha"></div>
+
+	<!-- запускаем тесты! -->
+	<script>
+		mocha.run();
+	</script>
+</body>
+
+</html>
